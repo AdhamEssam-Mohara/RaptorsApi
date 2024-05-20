@@ -1,0 +1,29 @@
+
+//   Create a New User:
+//curl -X POST http://localhost:3000/users -H "Content-Type: application/json" -d '{"first_name":"Adham","last_name":"Essam","email":"adham.Essam@example.com","user_role_id":1}'
+
+// Get all Users
+//curl http://localhost:3000/users
+
+// Get a user by ID
+//curl http://localhost:3000/users/6645fb96d115eedd035ac974
+
+//  Update a user by ID
+//curl -X PATCH http://localhost:3000/users/6645fb96d115eedd035ac974 -H "Content-Type: application/json" -d '{"first_name":"Adham2"}'
+
+
+// Delete a User by ID
+//curl -X DELETE http://localhost:3000/users/6645fb96d115eedd035ac974
+
+
+// ======================== Entity Table =============================
+
+//  Create a new Entity
+curl -X POST http://localhost:3000/entities \
+     -H "Content-Type: application/json" \
+     -d '{
+          "user_ids": ["6645fb39d115eedd035ac971", "6645fb96d115eedd035ac974"],
+          "entity_type_id": 1,
+          "entity_brand_id": 2,
+          "campaign_ids": [101, 102]
+        }'
